@@ -14,7 +14,7 @@
         </activity>
         <activity android:name="mcxtzhang.swipedelmenu.ListViewDelDemoActivity">
         </activity>
-        <activity android:name="mcxtzhang.swipedelmenu.LauncherActivity">
+        <activity android:name="mcxtzhang.swipedelmenu.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
