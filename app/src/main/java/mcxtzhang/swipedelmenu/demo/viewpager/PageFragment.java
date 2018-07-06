@@ -1,4 +1,4 @@
-package mcxtzhang.swipedelmenu.viewpager;
+package mcxtzhang.swipedelmenu.demo.viewpager;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,10 +29,10 @@ import mcxtzhang.swipedelmenu.data.SwipeBean;
  * History:
  */
 
-public class FullDemoFragment extends Fragment {
-  public static FullDemoFragment newInstance(int position) {
+public class PageFragment extends Fragment {
+  public static PageFragment newInstance(int position) {
     Bundle args = new Bundle();
-    FullDemoFragment fragment = new FullDemoFragment();
+    PageFragment fragment = new PageFragment();
     args.putInt("index", position);
     fragment.setArguments(args);
     return fragment;

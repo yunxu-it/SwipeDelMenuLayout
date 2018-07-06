@@ -1,4 +1,4 @@
-package mcxtzhang.swipedelmenu.FullDemo;
+package mcxtzhang.swipedelmenu.demo.recyclerview;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,23 +22,23 @@ import mcxtzhang.swipedelmenu.interfaces.onSwipeListener;
  * 时间： 2016/9/12.
  */
 
-public class FullDelDemoActivity extends Activity {
-  private RecyclerView mRv;
-  private FullDelDemoAdapter mAdapter;
+public class RecyclerViewDeleteActivity extends Activity {
+  private RecyclerView mRecyclerView;
+  private RecyclerViewDeleteAdapter mAdapter;
   private LinearLayoutManager mLayoutManager;
   private List<SwipeBean> mDatas;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_full_del_demo);
-    mRv = (RecyclerView) findViewById(R.id.rv);
+    mRecyclerView = (RecyclerView) findViewById(R.id.rv);
 
     initDatas();
-    mAdapter = new FullDelDemoAdapter(this, mDatas);
+    mAdapter = new RecyclerViewDeleteAdapter(this, mDatas);
     mAdapter.setOnDelListener(new onSwipeListener() {
       @Override public void onDelete(int pos) {
         if (pos >= 0 && pos < mDatas.size()) {
-          Toast.makeText(FullDelDemoActivity.this, "删除:" + pos, Toast.LENGTH_SHORT).show();
+          Toast.makeText(RecyclerViewDeleteActivity.this, "删除:" + pos, Toast.LENGTH_SHORT).show();
           mDatas.remove(pos);
           mAdapter.notifyItemRemoved(pos);//推荐用这个
           //如果删除时，不使用mAdapter.notifyItemRemoved(pos)，则删除没有动画效果，
@@ -55,18 +55,18 @@ public class FullDelDemoActivity extends Activity {
           mDatas.add(0, swipeBean);
           mAdapter.notifyItemRemoved(pos + 1);
           if (mLayoutManager.findFirstVisibleItemPosition() == 0) {
-            mRv.scrollToPosition(0);
+            mRecyclerView.scrollToPosition(0);
           }
           //notifyItemRangeChanged(0,holder.getAdapterPosition()+1);
         }
       }
     });
-    mRv.setAdapter(mAdapter);
-    mRv.setLayoutManager(mLayoutManager = new GridLayoutManager(this, 2));
+    mRecyclerView.setAdapter(mAdapter);
+    mRecyclerView.setLayoutManager(mLayoutManager = new GridLayoutManager(this, 2));
 
     //6 2016 10 21 add , 增加viewChache 的 get()方法，
     // 可以用在：当点击外部空白处时，关闭正在展开的侧滑菜单。我个人觉得意义不大，
-    mRv.setOnTouchListener(new View.OnTouchListener() {
+    mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
       @Override public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
           SwipeMenuLayout viewCache = SwipeMenuLayout.getViewCache();

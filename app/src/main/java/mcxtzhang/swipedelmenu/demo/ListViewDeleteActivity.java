@@ -1,4 +1,4 @@
-package mcxtzhang.swipedelmenu;
+package mcxtzhang.swipedelmenu.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import java.util.List;
 import mcxtzhang.listswipemenudemo.R;
 import mcxtzhang.swipedelmenu.data.SwipeBean;
 
-public class ListViewDelDemoActivity extends AppCompatActivity {
+public class ListViewDeleteActivity extends AppCompatActivity {
   private static final String TAG = "zxt";
   private ListView mLv;
   private List<SwipeBean> mDatas;
@@ -30,13 +30,13 @@ public class ListViewDelDemoActivity extends AppCompatActivity {
         holder.setText(R.id.content, swipeBean.name);
         holder.setOnClickListener(R.id.content, new View.OnClickListener() {
           @Override public void onClick(View v) {
-            Toast.makeText(ListViewDelDemoActivity.this, "position:" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ListViewDeleteActivity.this, "position:" + position, Toast.LENGTH_SHORT).show();
           }
         });
 
         holder.setOnClickListener(R.id.btnDelete, new View.OnClickListener() {
           @Override public void onClick(View v) {
-            Toast.makeText(ListViewDelDemoActivity.this, "删除:" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ListViewDeleteActivity.this, "删除:" + position, Toast.LENGTH_SHORT).show();
             //在ListView里，点击侧滑菜单上的选项时，如果想让擦花菜单同时关闭，调用这句话
             ((SwipeMenuLayout) holder.getConvertView()).quickClose();
             mDatas.remove(position);

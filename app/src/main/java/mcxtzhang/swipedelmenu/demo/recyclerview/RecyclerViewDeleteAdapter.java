@@ -1,4 +1,4 @@
-package mcxtzhang.swipedelmenu.FullDemo;
+package mcxtzhang.swipedelmenu.demo.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -22,13 +22,13 @@ import mcxtzhang.swipedelmenu.interfaces.onSwipeListener;
  * 时间： 2016/9/12.
  */
 
-public class FullDelDemoAdapter extends RecyclerView.Adapter<FullDelDemoAdapter.ViewHolder> {
+public class RecyclerViewDeleteAdapter extends RecyclerView.Adapter<RecyclerViewDeleteAdapter.ViewHolder> {
   private Context mContext;
   private LayoutInflater mInfalter;
   private List<SwipeBean> mDatas;
   private onSwipeListener mOnSwipeListener;
 
-  public FullDelDemoAdapter(Context context, List<SwipeBean> mDatas) {
+  public RecyclerViewDeleteAdapter(Context context, List<SwipeBean> mDatas) {
     mContext = context;
     mInfalter = LayoutInflater.from(context);
     this.mDatas = mDatas;

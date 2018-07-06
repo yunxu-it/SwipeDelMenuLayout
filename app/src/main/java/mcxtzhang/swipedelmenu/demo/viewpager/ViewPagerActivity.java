@@ -1,4 +1,4 @@
-package mcxtzhang.swipedelmenu.viewpager;
+package mcxtzhang.swipedelmenu.demo.viewpager;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,7 +16,7 @@ public class ViewPagerActivity extends AppCompatActivity {
     mViewPager = (ViewPager) findViewById(R.id.viewPager);
     mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
       @Override public Fragment getItem(int position) {
-        return FullDemoFragment.newInstance(position);
+        return PageFragment.newInstance(position);
       }
 
       @Override public int getCount() {

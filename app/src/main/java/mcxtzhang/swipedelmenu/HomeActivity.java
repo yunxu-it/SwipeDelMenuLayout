@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import mcxtzhang.listswipemenudemo.R;
-import mcxtzhang.swipedelmenu.FullDemo.FullDelDemoActivity;
-import mcxtzhang.swipedelmenu.viewpager.ViewPagerActivity;
+import mcxtzhang.swipedelmenu.demo.LinearLayoutDeleteActivity;
+import mcxtzhang.swipedelmenu.demo.ListViewDeleteActivity;
+import mcxtzhang.swipedelmenu.demo.recyclerview.RecyclerViewDeleteActivity;
+import mcxtzhang.swipedelmenu.demo.viewpager.ViewPagerActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -16,19 +18,19 @@ public class HomeActivity extends AppCompatActivity {
 
     findViewById(R.id.rv).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        startActivity(new Intent(v.getContext(), FullDelDemoActivity.class));
+        startActivity(new Intent(v.getContext(), RecyclerViewDeleteActivity.class));
       }
     });
 
     findViewById(R.id.lv).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        startActivity(new Intent(v.getContext(), ListViewDelDemoActivity.class));
+        startActivity(new Intent(v.getContext(), ListViewDeleteActivity.class));
       }
     });
 
     findViewById(R.id.ll).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        startActivity(new Intent(v.getContext(), LinearLayoutDelDemoActivity.class));
+        startActivity(new Intent(v.getContext(), LinearLayoutDeleteActivity.class));
       }
     });
 
